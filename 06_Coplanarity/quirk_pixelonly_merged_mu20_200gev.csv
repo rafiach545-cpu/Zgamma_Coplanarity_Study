@@ -1,0 +1,17 @@
+event,hard_found,combined_found,transition,premerge_hits,postmerge_hits
+0,True,True,1->1,3226,3226
+1,True,True,1->1,3539,3539
+2,False,False,0->0,2921,2921
+3,True,True,1->1,3714,3714
+4,False,False,0->0,3059,3057
+5,False,False,0->0,4123,4122
+6,True,True,1->1,5311,5311
+7,False,True,0->1,4314,4312
+8,True,True,1->1,3016,3016
+9,True,True,1->1,2826,2826
+10,False,False,0->0,4713,4710
+11,False,False,0->0,4693,4690
+12,True,True,1->1,3307,3305
+13,True,False,1->0,2460,2460
+14,False,False,0->0,3023,3023
+15,True,True,1->1,3199,3198

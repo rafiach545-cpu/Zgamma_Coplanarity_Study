@@ -1,0 +1,95 @@
+event,found,delta_s,delta_w,reason
+53.0,False,,,no valid outer-layer seed pairs
+442.0,False,,,no valid outer-layer seed pairs
+622.0,False,,,no valid outer-layer seed pairs
+675.0,False,,,no valid outer-layer seed pairs
+774.0,True,0.006536303512632268,2.459758977894058,
+777.0,False,,,no exact8 plane survived
+800.0,False,,,no valid outer-layer seed pairs
+810.0,False,,,no exact8 plane survived
+850.0,False,,,no valid outer-layer seed pairs
+1044.0,False,,,no valid outer-layer seed pairs
+1148.0,False,,,no valid outer-layer seed pairs
+1205.0,False,,,no valid outer-layer seed pairs
+1270.0,False,,,no valid outer-layer seed pairs
+1370.0,False,,,no valid outer-layer seed pairs
+1379.0,True,0.0018118965292859043,4.562204164013796,
+1684.0,False,,,no valid outer-layer seed pairs
+1914.0,False,,,no exact8 plane survived
+2396.0,False,,,no exact8 plane survived
+2484.0,False,,,no valid outer-layer seed pairs
+2691.0,False,,,no valid outer-layer seed pairs
+2844.0,False,,,no valid outer-layer seed pairs
+3000.0,False,,,no valid outer-layer seed pairs
+3042.0,False,,,no valid outer-layer seed pairs
+3163.0,False,,,no exact8 plane survived
+3287.0,False,,,no valid outer-layer seed pairs
+3315.0,False,,,no valid outer-layer seed pairs
+3344.0,False,,,no valid outer-layer seed pairs
+3585.0,False,,,no valid outer-layer seed pairs
+3604.0,False,,,no valid outer-layer seed pairs
+3616.0,False,,,no valid outer-layer seed pairs
+3648.0,False,,,no valid outer-layer seed pairs
+3659.0,False,,,no valid outer-layer seed pairs
+3767.0,False,,,no valid outer-layer seed pairs
+4053.0,False,,,no valid outer-layer seed pairs
+4347.0,False,,,no valid outer-layer seed pairs
+4477.0,False,,,no valid outer-layer seed pairs
+4512.0,False,,,no exact8 plane survived
+4622.0,False,,,no valid outer-layer seed pairs
+4761.0,False,,,no valid outer-layer seed pairs
+4854.0,False,,,no valid outer-layer seed pairs
+4989.0,False,,,no valid outer-layer seed pairs
+4991.0,False,,,no exact8 plane survived
+5200.0,False,,,no valid outer-layer seed pairs
+5227.0,False,,,no valid outer-layer seed pairs
+5271.0,False,,,no valid outer-layer seed pairs
+5401.0,False,,,no valid outer-layer seed pairs
+5423.0,False,,,no valid outer-layer seed pairs
+5428.0,True,0.0003664883502921082,1.5494421623255805,
+5475.0,False,,,no exact8 plane survived
+5675.0,False,,,no exact8 plane survived
+5702.0,False,,,no valid outer-layer seed pairs
+5736.0,False,,,no valid outer-layer seed pairs
+5797.0,True,0.005852116060078277,3.0003566017317436,
+5853.0,False,,,no valid outer-layer seed pairs
+6193.0,False,,,no valid outer-layer seed pairs
+6317.0,False,,,no valid outer-layer seed pairs
+6399.0,False,,,no exact8 plane survived
+6407.0,False,,,no exact8 plane survived
+6440.0,False,,,no valid outer-layer seed pairs
+6692.0,False,,,no exact8 plane survived
+6885.0,False,,,no valid outer-layer seed pairs
+6922.0,False,,,no exact8 plane survived
+7045.0,False,,,no valid outer-layer seed pairs
+7307.0,False,,,no valid outer-layer seed pairs
+7327.0,False,,,no exact8 plane survived
+7331.0,True,0.0004985215225133939,1.0884362529471507,
+7351.0,False,,,no valid outer-layer seed pairs
+7446.0,False,,,no exact8 plane survived
+7500.0,False,,,no valid outer-layer seed pairs
+7528.0,False,,,no valid outer-layer seed pairs
+7768.0,False,,,no valid outer-layer seed pairs
+7800.0,True,0.0014518178585382056,1.7453079734441144,
+7892.0,False,,,no valid outer-layer seed pairs
+7918.0,False,,,no valid outer-layer seed pairs
+7982.0,False,,,no exact8 plane survived
+8119.0,False,,,no valid outer-layer seed pairs
+8289.0,False,,,no valid outer-layer seed pairs
+8378.0,False,,,no valid outer-layer seed pairs
+8401.0,False,,,no exact8 plane survived
+8443.0,False,,,no valid outer-layer seed pairs
+8666.0,False,,,no valid outer-layer seed pairs
+8671.0,True,0.00868316306194483,3.180708593094196,
+8810.0,False,,,no valid outer-layer seed pairs
+8882.0,False,,,no valid outer-layer seed pairs
+8926.0,False,,,no valid outer-layer seed pairs
+8973.0,False,,,no valid outer-layer seed pairs
+9026.0,False,,,no valid outer-layer seed pairs
+9113.0,False,,,no valid outer-layer seed pairs
+9140.0,False,,,no valid outer-layer seed pairs
+9329.0,False,,,no valid outer-layer seed pairs
+9367.0,False,,,no valid outer-layer seed pairs
+9415.0,False,,,no valid outer-layer seed pairs
+9640.0,False,,,no valid outer-layer seed pairs
+9771.0,False,,,no exact8 plane survived

@@ -1,0 +1,17 @@
+section,item,result,status,note
+Geometry,Conversion radius,23.5 mm,verified,ATLAS beam-pipe inner radius used as r_conv
+Background,Barrel conversion events,7303,verified,After |eta|<1.8
+Background,No-PU pre-merge Exact8,3/7303 = 0.0411%,verified,Primary untriggered background result
+Background,No-PU post-merge Exact8,0/7303,verified,"2 coverage failures, 1 final-ds failure among previous 3"
+Pile-up,mu scan,"mu0=3, mu5=3, mu10=3, mu20=1, mu50=2",verified,Pre-merge Exact8; fixed-mu overlay
+Pile-up,New 0->1 backgrounds,0 at all tested mu,verified,No new coplanar candidates observed
+Trigger,Background post-hoc ETmiss cut,"34 barrel events, 0/34 pass",verified,Separate sensitivity study; not primary 3/7303 sample
+Signal,Pixel-only ds-floor pathology,restored to 16/16 at ds_floor=0.020 mm,verified,"Observed at 50, 200, and 250 GeV tested points"
+Signal,SCT coordinate ablation,Pixel/rphi 100%; z/full 0%,verified,"320 trials per mode at 50, 200, 250 GeV"
+Signal,50 GeV z-only failure split,"45.6% seed-ds, 53.8% final-ds",verified,Coverage failures negligible
+Signal,200 GeV z-only failure split,"28.8% seed-ds, 71.3% final-ds",verified,Coverage failures 0
+Signal,250 GeV z-only failure split,"29.1% seed-ds, 70.9% final-ds",verified,Above pT>200 GeV momentum threshold
+Signal trigger,Momentum benchmark,250 GeV > 200 GeV,addressed,Strict momentum threshold crossed
+Signal timing,Outermost Method-B tracker timing,16/16 events below 25 ns,verified,Layer-8 arrival ~24.84-24.92 ns
+Limitation,Full trigger timing,not demonstrated,open/limitation,"25 ns result applies to simplified inner-tracker layer 8, not full distant trigger system"
+Limitation,Pile-up pool size,881 usable events vs paper 125000,limitation,mu=50 overlay reached with much smaller reusable pool

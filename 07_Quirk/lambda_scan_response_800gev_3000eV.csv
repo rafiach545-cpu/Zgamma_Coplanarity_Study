@@ -1,0 +1,17 @@
+event,phi0,lambda_eV,lambda_keV,n_hits_before_response,n_hits_after_response,hits_removed_by_merge,found,delta_s,delta_w,reason
+0,0.0,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+1,0.39269908169872414,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+2,0.7853981633974483,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+3,1.1780972450961724,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+4,1.5707963267948966,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+5,1.9634954084936207,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+6,2.356194490192345,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+7,2.748893571891069,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+8,3.141592653589793,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+9,3.5342917352885173,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+10,3.9269908169872414,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+11,4.319689898685965,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+12,4.71238898038469,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+13,5.105088062083414,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+14,5.497787143782138,3000.0,3.0,16,16,0,False,,,no exact8 plane survived
+15,5.890486225480862,3000.0,3.0,16,16,0,False,,,no exact8 plane survived

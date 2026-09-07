@@ -1,0 +1,1 @@
+# Zgamma_Coplanarity_StudyEndcaps-genuinely-irrelevant-hain is-specific-setup-(pair_pT=250GeV, opening_angle=1.3rad)-ke-liye. Paper-ka-"endcaps-should-increase-εfid"-comment-boundary-cases-ke-liye-hai (jahan-quirk-thoda-forward/backward-boosted-ho), hamara-benchmark-genuinely-central-hai — is-hypothesis-ko-yahan-test-karna-meaningless-tha.

@@ -1,0 +1,4 @@
+pT_bin,n,accepted,acceptance,binomial_error,sample
+<5 GeV,50,0,0.0,0.0,"dedicated low-pT, 100% conversion sampling"
+5-20 GeV,442,22,0.049773755656108594,0.01034433511703688,"high-stat, 10% conversion sampling"
+>20 GeV,483,100,0.2070393374741201,0.018436509047652625,"high-stat, 10% conversion sampling"

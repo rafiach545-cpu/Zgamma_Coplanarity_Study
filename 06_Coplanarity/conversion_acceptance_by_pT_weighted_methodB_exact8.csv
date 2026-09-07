@@ -1,0 +1,4 @@
+pT_bin,n_total,n_pass,effective_total,effective_pass,weighted_acceptance
+<5,34,0,0.34,0.0,0.0
+5-20,3384,0,33.83999999999999,0.0,0.0
+>20,3885,0,38.849999999999994,0.0,0.0

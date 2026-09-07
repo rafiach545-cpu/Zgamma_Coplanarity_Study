@@ -1,0 +1,15 @@
+benchmark,mode,reason,count,total_trials,fraction
+200 GeV,full,final_ds_fail,229,320,0.715625
+200 GeV,full,seed_ds_fail,91,320,0.284375
+50 GeV,full,final_ds_fail,169,320,0.528125
+50 GeV,full,missing_layer_after_growth,1,320,0.003125
+50 GeV,full,seed_ds_fail,150,320,0.46875
+200 GeV,pixel_only,pass,320,320,1.0
+50 GeV,pixel_only,pass,320,320,1.0
+200 GeV,rphi_only,pass,320,320,1.0
+50 GeV,rphi_only,pass,320,320,1.0
+200 GeV,z_only,final_ds_fail,228,320,0.7125
+200 GeV,z_only,seed_ds_fail,92,320,0.2875
+50 GeV,z_only,final_ds_fail,172,320,0.5375
+50 GeV,z_only,missing_layer_after_growth,2,320,0.00625
+50 GeV,z_only,seed_ds_fail,146,320,0.45625

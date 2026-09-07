@@ -1,0 +1,11 @@
+item,paper,implementation,status,impact
+Photon pT cut,pT_gamma > 0.5 GeV,Generated sample used pT_gamma >= 10 GeV,Different,Background sample is harder than the paper selection
+Z decay,Z -> nu nu,Inclusive Z generation; Z->nu nu-like events selected post-hoc,Different,Trigger study is post-hoc rather than generation-level
+ETmiss trigger,ETmiss > 200 GeV,Applied post-hoc,Partial,Primary 3/7303 background result is untriggered
+Photon conversion treatment,Material conversion probability,1% weighted conversion prescription,Project choice,Do not present 1% as an exact paper cut
+Pile-up,<mu> = 50,"Fixed mu = 0,5,10,20,50",Simplified,No event-to-event pile-up multiplicity variation
+Pile-up pool,125000 minimum-bias events,881 usable minimum-bias events,Reduced statistics,Pile-up events are reused across hard events
+Pixel merging,Neighboring Pixel hits merged,ds<=1 and dz<=1 in Pixel-cell index space,Implementation definition,"Exact adjacency rule is ours, not a numerical paper cut"
+Quirk ds floor,No ds floor,Diagnostic ds_floor = 0.020 mm in growth comparison,Diagnostic only,Used to isolate near-zero-ds numerical instability
+Signal momentum trigger,pT_CM > 200 GeV,250 GeV benchmark tested,Addressed,Above-threshold momentum point is available
+Signal timing,Timing requirement associated with trigger system,Inner tracker layer-8 arrival <25 ns verified,Partial,Full distant trigger/muon-system timing not demonstrated

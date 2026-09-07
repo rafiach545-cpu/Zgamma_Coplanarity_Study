@@ -1,0 +1,36 @@
+METHOD B — CONVERTED PHOTON BACKGROUND — NO PILEUP
+
+Fiducial conversion events: 7303
+Conversion weight per event: 0.01
+Effective total weight: 73.03
+
+Geometry:
+Simplified 8-cylinder ATLAS barrel proxy.
+
+Full SCT response:
+sigma_Rphi = 0.034 mm
+sigma_z    = 1.16 mm
+
+PRE-MERGE:
+Found = 3 / 7303
+Effective pass weight = 0.03
+Weighted acceptance = 0.0004107900862659181
+= 0.041079 %
+
+pT bins:
+<5 GeV:    0 / 34
+5-20 GeV:  0 / 3384
+>20 GeV:   3 / 3885
+>20 weighted acceptance = 0.0007722007722007722
+
+POST-MERGE:
+Found = 0 / 7303
+Effective pass weight = 0.0
+Weighted acceptance = 0.0
+
+Important:
+This is a conversion-only Method-B result.
+Pile-up has NOT yet been overlaid.
+The simplified cylinder geometry, SCT coordinate response,
+and Pixel merging are concrete implementation choices and
+must not be described as an exact reproduction of the paper.

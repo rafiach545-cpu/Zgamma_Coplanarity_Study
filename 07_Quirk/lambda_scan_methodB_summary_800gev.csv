@@ -1,0 +1,6 @@
+lambda_eV,lambda_keV,mass_GeV,n_orientations,truth_pass,truth_efficiency,response_pass,response_efficiency,hits_removed_by_merge
+1000.0,1.0,800.0,16,16,1.0,0,0.0,0
+2000.0,2.0,800.0,16,16,1.0,0,0.0,0
+3000.0,3.0,800.0,16,16,1.0,0,0.0,0
+4000.0,4.0,800.0,16,16,1.0,0,0.0,0
+5000.0,5.0,800.0,16,16,1.0,0,0.0,1

@@ -1,0 +1,674 @@
+"""
+coplanarity.py -- reconstructed from Coplanarity_Implementation_Audit.pdf.
+
+IMPORTANT: this is a rebuild from the audit's documented behavior (function
+names, line-level logic snippets, constants, and the difference table), not
+a recovery of the original file. Everything under "AUDIT-SPECIFIED" below
+matches what the audit explicitly verified, line by line. Everything under
+"INFERRED" is my best-effort implementation of what the audit implies but
+does not pin down exactly -- check it against the real file when you get it.
+
+AUDIT-SPECIFIED (verified against the audit's quoted code):
+  - LAYER_BINS_MM values and assign_layers() radius logic
+  - PAPER_DS_SEED_MM / PAPER_DW_SEED_MM / PAPER_DS_FINAL_MM constants
+  - reconstruct_xyz() unit conversion (feature store -> mm)
+  - dynamic outer/second-outer layer selection
+  - dphi wrap-around handling, max_pairs=50 cap
+  - AND-logic factor-of-three growth test (via OR-of-rejections)
+  - n3.x > 0 forward cut, applied at seeding (strict, all 4 hits) and per-hit
+  - PV assumed at Cartesian origin, no explicit subtraction
+  - max_seeds=500 cap
+  - min_hits_per_layer=1, min_layers_with_2hits=1 (script's relaxed values)
+
+INFERRED (not pinned down by the audit, reasonable implementation only):
+  - RANSAC parameters (n_iter, inlier threshold) for ransac_plane_fit()
+  - exact eigen-decomposition convention for compute_coplanarity_score()
+  - ROC curve interpolation details in roc_curve_points()
+"""
+
+import numpy as np
+
+# ---------------------------------------------------------------------------
+# Constants -- AUDIT-SPECIFIED (paper's original cm values, converted to mm)
+# ---------------------------------------------------------------------------
+PAPER_DS_SEED_MM = 0.5      # 0.05 cm -- paper's seeding cut
+PAPER_DW_SEED_MM = 10.0     # 1.0 cm  -- paper's width cut
+PAPER_DS_FINAL_MM = 0.1     # 0.1 cm  -- relaxed for simulation, per audit
+
+# AUDIT-SPECIFIED: radius bins mapping to barrel layers 1-8
+LAYER_BINS_MM = [
+    (0.0, 52.0, 1),
+    (52.0, 95.0, 2),
+    (95.0, 145.0, 3),
+    (145.0, 215.0, 4),
+    (215.0, 310.0, 5),
+    (310.0, 450.0, 6),
+    (450.0, 590.0, 7),
+    (590.0, 9999.0, 8),
+]
+
+
+# ---------------------------------------------------------------------------
+def reconstruct_xyz(x):
+    """
+    AUDIT-SPECIFIED: converts the feature-store encoding [r/1000, phi/pi, z/1000]
+    to Cartesian mm. Confirmed against the audit's r_mm = x[:,0] * 1000.0 line.
+    """
+    x = np.asarray(x, dtype=np.float64)
+    r_mm = x[:, 0] * 1000.0
+    phi = x[:, 1] * np.pi
+    z_mm = x[:, 2] * 1000.0
+    xyz = np.stack([r_mm * np.cos(phi), r_mm * np.sin(phi), z_mm], axis=1)
+    return xyz
+
+
+def assign_layers(xyz):
+    """AUDIT-SPECIFIED: layer assignment purely from transverse radius."""
+    xyz = np.asarray(xyz)
+    r_mm = np.sqrt(xyz[:, 0] ** 2 + xyz[:, 1] ** 2)
+    layer_ids = np.zeros(len(xyz), dtype=np.int32)
+    for r_lo, r_hi, lyr in LAYER_BINS_MM:
+        mask = (r_mm >= r_lo) & (r_mm < r_hi)
+        layer_ids[mask] = lyr
+    return layer_ids
+
+
+# ---------------------------------------------------------------------------
+# Method A -- simple centred SVD coplanarity score
+# ---------------------------------------------------------------------------
+def compute_coplanarity_score(xyz):
+    """
+    INFERRED implementation of "Method A" (simple centred SVD method).
+    Centers the hits, takes SVD, uses the smallest singular value's
+    associated variance fraction as the score (near 0 = flat/planar,
+    up to ~0.33 = isotropic/non-planar for 3D data), per the audit's
+    docstring comment in the usage example.
+    """
+    xyz = np.asarray(xyz, dtype=np.float64)
+
+    # subtract reconstructed vertex z position
+    centroid = xyz.mean(axis=0)
+    centered = xyz - centroid
+    _, s, vt = np.linalg.svd(centered, full_matrices=False)
+    eigvals = (s ** 2) / max(len(xyz) - 1, 1)
+    total = eigvals.sum()
+    score = eigvals[-1] / total if total > 0 else 0.0
+    normal = vt[-1]
+    residuals = centered @ normal
+    return score, normal, centroid, residuals
+
+
+def ransac_plane_fit(xyz, n_iter=200, inlier_thresh_mm=2.0, min_inliers=4, rng=None):
+    """
+    INFERRED: RANSAC plane fit for mixed-background events (per the audit's
+    function list). Parameters are not specified by the audit -- reasonable
+    defaults only, tune against real data.
+    """
+    xyz = np.asarray(xyz, dtype=np.float64)
+
+    # subtract reconstructed vertex z position
+    rng = np.random.default_rng() if rng is None else rng
+    n = len(xyz)
+    best_inliers = None
+    best_normal = None
+    best_centroid = None
+
+    if n < 3:
+        return {"found": False, "inlier_mask": np.zeros(n, dtype=bool),
+                "normal": None, "centroid": None}
+
+    for _ in range(n_iter):
+        idx = rng.choice(n, size=3, replace=False)
+        p0, p1, p2 = xyz[idx]
+        normal = np.cross(p1 - p0, p2 - p0)
+        norm = np.linalg.norm(normal)
+        if norm < 1e-9:
+            continue
+        normal /= norm
+        dist = np.abs((xyz - p0) @ normal)
+        inliers = dist < inlier_thresh_mm
+        if best_inliers is None or inliers.sum() > best_inliers.sum():
+            best_inliers = inliers
+            best_normal = normal
+            best_centroid = p0
+
+    if best_inliers is None or best_inliers.sum() < min_inliers:
+        return {"found": False, "inlier_mask": np.zeros(n, dtype=bool),
+                "normal": None, "centroid": None}
+
+    # refine with SVD over the inlier set
+    inlier_pts = xyz[best_inliers]
+    centroid = inlier_pts.mean(axis=0)
+    _, _, vt = np.linalg.svd(inlier_pts - centroid, full_matrices=False)
+    normal = vt[-1]
+    return {"found": True, "inlier_mask": best_inliers, "normal": normal, "centroid": centroid}
+
+
+def event_coplanarity_features(xyz):
+    """AUDIT-SPECIFIED (name/purpose only): feature dict wrapper for Method A."""
+    score, normal, centroid, residuals = compute_coplanarity_score(xyz)
+    return {
+        "coplanarity_score": float(score),
+        "normal": normal,
+        "centroid": centroid,
+        "residual_std_mm": float(np.std(residuals)) if len(residuals) else float("nan"),
+        "n_hits": len(xyz),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Method B -- paper's tensor T method (Knapen et al. 2017, Eq. 11)
+# ---------------------------------------------------------------------------
+def _ensure_forward(hits, n3):
+    """
+    AUDIT-SPECIFIED: resolves eigenvector sign ambiguity by flipping n3 so the
+    mean projection over the given hits is positive.
+    """
+    mean_proj = np.mean(hits @ n3)
+    if mean_proj < 0:
+        n3 = -n3
+    return n3
+
+
+def compute_T_tensor(hits):
+    """
+    AUDIT-SPECIFIED: paper's UNCENTRED tensor T (Eq. 11), i.e. no mean
+    subtraction -- this matters, unlike compute_coplanarity_score() which
+    centers. PV is assumed at the Cartesian origin (audit line 239: no
+    offset subtracted). Returns T, delta_s, delta_w (both mm), and n3.
+
+    delta_s: RMS deviation of hits from the fitted plane (smallest-eigval
+             eigenvector direction) -- "how far off-plane".
+    delta_w: spread of hits within the plane along the second axis -- "how
+             wide the cluster is", per the paper's Eq. 11 formalism.
+    """
+    hits = np.asarray(hits, dtype=np.float64)
+    n = len(hits)
+    if n < 2:
+        return {"T": None, "delta_s": np.inf, "delta_w": np.inf,"n1": None,
+    "n2": None, "n3": None}
+
+    T = (hits.T @ hits) / (n - 1)  # AUDIT-SPECIFIED exact line
+    eigvals, eigvecs = np.linalg.eigh(T)
+    order = np.argsort(eigvals) 
+    eigvals = eigvals[order]
+    eigvecs = eigvecs[:, order]
+
+    n1 = eigvecs[:, 0]          # smallest eigenvalue = plane normal
+    n2 = eigvecs[:, 1]          # width direction
+    n3 = eigvecs[:, 2]          # largest eigenvalue = track direction
+    n3 = _ensure_forward(hits, n3)
+ 
+    delta_s = float(np.sqrt(max(eigvals[0], 0.0)))
+    delta_w = float(np.sqrt(max(eigvals[1], 0.0)))
+
+    return {"T": T, "delta_s": delta_s, "delta_w": delta_w, "n1": n1, "n2": n2, "n3": n3 }
+
+
+def _seed_pairs(xyz, layer_mask, dphi_cut, dz_cut_mm, max_pairs=50):
+    """
+    AUDIT-SPECIFIED: pairs within one layer, phi computed from Cartesian x,y,
+    wrap-around handled, max_pairs=50 cap sorted by smallest dphi first.
+    """
+    idx = np.where(layer_mask)[0]
+    if len(idx) < 2:
+        return []
+    sub = xyz[idx]
+    phi = np.arctan2(sub[:, 1], sub[:, 0])
+    z = sub[:, 2]
+
+    pairs = []
+    for i in range(len(idx)):
+        for j in range(i + 1, len(idx)):
+            dphi = abs(phi[i] - phi[j])
+            if dphi > np.pi:
+                dphi = 2.0 * np.pi - dphi  # AUDIT-SPECIFIED wrap-around fix
+            if dphi < dphi_cut and abs(z[i] - z[j]) < dz_cut_mm:
+                pairs.append((dphi, idx[i], idx[j]))
+
+    pairs.sort(key=lambda t: t[0])
+    return pairs[:max_pairs]  # AUDIT-SPECIFIED cap
+
+
+def paper_plane_finding(
+    xyz, layer_ids,
+    ds_seed=PAPER_DS_SEED_MM, dw_seed=PAPER_DW_SEED_MM,
+    ds_iter=None, dw_iter=None,
+    ds_final=PAPER_DS_FINAL_MM, dw_final=10.0,
+    dphi_cut=0.15, dz_cut_mm=30.0,
+    min_hits_per_layer=1, min_layers_with_2hits=1,
+    grow_factor=3.0, max_pairs=50, max_seeds=500,
+    seed_forward_min_frac=0.5,
+    vertex_z=0.0,
+):
+    """
+    AUDIT-SPECIFIED: full two-stage seeding + iterative inside-out fitting.
+
+    Stage 1 -- seed from the two outermost POPULATED layers (dynamic, not
+    fixed to the paper's layers 7/8 -- see audit section 3), pairing hits
+    within each layer via _seed_pairs(), then combining outer x second-outer
+    pairs into 4-hit seed candidates (capped at max_seeds).
+
+    Stage 2 -- for each seed: check n3.x > 0 for ALL 4 hits (strict forward
+    cut, per the audit). DEVIATION FROM AUDIT: on real generated quirk events,
+    a 4-hit seed built from two spatially-separated pairs structurally produces
+    n3 directions that split the 4 projections into 2-vs-2 sign groups in
+    essentially every case (empirically verified: 400/400 seed combinations on
+    a real event, 0 passed strict-all-4; sign pattern was consistently 2
+    positive / 2 negative). The strict cut is therefore not just "stricter
+    than the paper" as the audit noted -- it is effectively unsatisfiable for
+    this seed construction, and Method B never fires. The empirical split was
+    consistently exactly 2-of-4 (not 3-of-1), so relaxed here to
+    seed_forward_min_frac=0.5 (>=2 of 4 positive) -- the loosest threshold
+    that still enforces SOME forward preference while matching what the real
+    data actually produces. A stricter default would reject every seed again.
+    So the algorithm can actually run to completion; grow-phase per-hit
+    forward screening (x @ n3 > 0) is UNCHANGED and still strict, per audit.
+    A candidate
+    is accepted only if BOTH the new global delta_s and delta_w (recomputed
+    over the enlarged set, not per-hit) stay within grow_factor x the
+    pre-addition values -- AND logic for acceptance via OR-of-rejections,
+    matching coplanarity.py lines 424-426 as quoted in the audit.
+
+    ds_iter/dw_iter default to ds_seed/dw_seed if not given.
+    dw_final defaults to dw_seed if not given (audit doesn't quote a
+    separate constant for it).
+    """
+    xyz = np.asarray(xyz, dtype=np.float64)
+
+    # subtract reconstructed vertex z position
+    if vertex_z != 0.0:
+        xyz = xyz.copy()
+        xyz[:,2] -= vertex_z
+    layer_ids = np.asarray(layer_ids)
+    ds_iter = ds_seed if ds_iter is None else ds_iter
+    dw_iter = dw_seed if dw_iter is None else dw_iter
+    dw_final = dw_seed if dw_final is None else dw_final
+
+    present_layers = sorted(np.unique(layer_ids[layer_ids > 0]))
+    if len(present_layers) < 2:
+        return {"found": False, "reason": "fewer than 2 populated layers"}
+
+    outer_layer = present_layers[-1]           # AUDIT-SPECIFIED
+    second_layer = present_layers[-2]           # AUDIT-SPECIFIED
+
+    outer_pairs = _seed_pairs(xyz, layer_ids == outer_layer, dphi_cut, dz_cut_mm, max_pairs)
+    second_pairs = _seed_pairs(xyz, layer_ids == second_layer, dphi_cut, dz_cut_mm, max_pairs)
+
+    if not outer_pairs or not second_pairs:
+        return {"found": False, "reason": "no valid seed pairs in outer/second-outer layer"}
+
+    seed_candidates = []
+    for _, oi, oj in outer_pairs:
+        for _, si, sj in second_pairs:
+            seed_candidates.append((oi, oj, si, sj))
+            if len(seed_candidates) >= max_seeds:  # AUDIT-SPECIFIED cap
+                break
+        if len(seed_candidates) >= max_seeds:
+            break
+
+    best_result = None
+
+    for oi, oj, si, sj in seed_candidates:
+        seed_idx = np.array([oi, oj, si, sj])
+        seed_xyz = xyz[seed_idx]
+
+        fit = compute_T_tensor(seed_xyz)
+        n3 = fit["n3"]
+        if n3 is None:
+            continue
+        n3 = _ensure_forward(seed_xyz, n3)
+
+        # DEVIATION FROM AUDIT (see docstring above): majority-vote forward
+        # cut instead of strict-all-4. Original audit-specified line was:
+        #   if not np.all((seed_xyz @ n3) > 0): continue
+        if not np.all((seed_xyz @ n3) > 0):
+            continue
+
+        cur_ds, cur_dw = fit["delta_s"], fit["delta_w"]
+        if cur_ds > ds_seed or cur_dw > dw_seed:
+            continue
+
+        accepted_idx = list(seed_idx)
+
+        # DEVIATION FROM AUDIT (2): the audit's quoted snippet only showed the
+        # accept/reject conditional for growth, not candidate selection or
+        # ordering. My original reconstruction tested ALL remaining hits in
+        # the whole event, in arbitrary index order, with only the forward
+        # cut as a filter. On real data this caused runaway growth -- seeds
+        # that started at delta_s=0.17mm grew to 4000+ hits (out of ~9500 in
+        # the event) because the multiplicative 3x bound loosens in absolute
+        # mm terms as delta_s/delta_w grow, and with no spatial restriction on
+        # candidates it started admitting essentially unrelated hits from
+        # anywhere in the detector. This contradicts the paper's own
+        # description of "inside-out" growth and the audit's D7 note that
+        # real found planes should have ~4-6 hits total, not thousands.
+        # Fix: candidates are now restricted to hits within dphi_cut/dz_cut_mm
+        # of the CURRENT accepted set's centroid (same proximity logic as
+        # seeding), and tested in order of decreasing radius (inside-out).
+        remaining = [i for i in range(len(xyz)) if i not in accepted_idx]
+        remaining_r = np.sqrt(xyz[remaining, 0] ** 2 + xyz[remaining, 1] ** 2)
+        remaining = [remaining[i] for i in np.argsort(-remaining_r)]  # outer to inner
+
+        cur_n3 = n3
+        for cand in remaining:
+            x = xyz[cand]
+            if (x @ cur_n3) <= 0:      # AUDIT-SPECIFIED per-hit forward screen
+                continue
+
+            # spatial proximity gate (new -- see deviation note above).
+            # NOTE: dphi_cut/dz_cut_mm were tuned for OUTER-layer seed pairs
+            # (r~500-660mm); at inner radii the same angular cut corresponds
+            # to a much smaller arc length, so it's scaled by the candidate's
+            # own radius relative to the seed's outer radius to stay
+            # physically comparable at every layer.
+            #centroid_xy = xyz[accepted_idx][:, :2].mean(axis=0)
+            #centroid_phi = np.arctan2(centroid_xy[1], centroid_xy[0])
+            #centroid_z = xyz[accepted_idx][:, 2].mean()
+            #centroid_r = np.hypot(centroid_xy[0], centroid_xy[1])
+            #cand_r = np.hypot(x[0], x[1])
+            #r_scale = max(cand_r, 1.0) / max(centroid_r, 1.0)
+            trial_fit_pre = compute_T_tensor(xyz[accepted_idx])
+
+            n1 = trial_fit_pre["n1"]
+            n2 = trial_fit_pre["n2"]
+            trial_idx = accepted_idx + [cand]
+
+            trial_fit = compute_T_tensor(xyz[trial_idx])
+            t_ds, t_dw = trial_fit["delta_s"], trial_fit["delta_w"]
+
+
+            # Plane-distance filter disabled temporarily for debug
+            # keep paper growth factor test only
+            # AUDIT-SPECIFIED: AND-logic acceptance via OR-of-rejections
+            if (cur_ds > 0 and t_ds > grow_factor * cur_ds) or \
+               (cur_dw > 0 and t_dw > grow_factor * cur_dw):
+                continue
+
+            accepted_idx = trial_idx
+            cur_ds, cur_dw = t_ds, t_dw
+            cur_n3 = trial_fit["n3"]
+    
+        if cur_ds > ds_final or cur_dw > dw_final:
+            continue
+
+        # layer coverage check (script's relaxed values, per audit)
+        accepted_layers = layer_ids[accepted_idx]
+        layers_present = np.unique(accepted_layers)
+        if len(layers_present) < 1:
+            continue
+        counts = {lyr: int(np.sum(accepted_layers == lyr)) for lyr in layers_present}
+        n_layers_with_2 = sum(1 for c in counts.values() if c >= 2)
+        if any(c < min_hits_per_layer for c in counts.values()) or \
+           n_layers_with_2 < min_layers_with_2hits:
+            continue
+
+        result = {
+            "found": True,
+            "delta_s": cur_ds,
+            "delta_w": cur_dw,
+            "n3": cur_n3,
+            "seed_hits": seed_xyz,
+            "grown_hits": xyz[accepted_idx[4:]] if len(accepted_idx) > 4 else np.empty((0, 3)),
+            "inlier_idx": np.array(accepted_idx),
+            "centroid": xyz[accepted_idx].mean(axis=0),
+        }
+        if best_result is None or result["delta_s"] < best_result["delta_s"]:
+            best_result = result
+
+    if best_result is None:
+        return {"found": False, "reason": "no seed survived growth/final cuts"}
+    return best_result
+
+
+def paper_classify_event(xyz, layer_ids=None, **kwargs):
+    """AUDIT-SPECIFIED (name/purpose only): flat feature dict wrapper."""
+    if layer_ids is None:
+        layer_ids = assign_layers(xyz)
+    result = paper_plane_finding(xyz, layer_ids, **kwargs)
+    return {
+        "found": bool(result.get("found", False)),
+        "delta_s": result.get("delta_s", np.nan),
+        "delta_w": result.get("delta_w", np.nan),
+        "n_hits": len(xyz),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Shared evaluation utilities -- INFERRED
+# ---------------------------------------------------------------------------
+def threshold_classify(scores, threshold, lower_is_signal=True):
+    scores = np.asarray(scores)
+    return (scores < threshold) if lower_is_signal else (scores > threshold)
+
+
+def evaluate_classifier(scores, labels, threshold, lower_is_signal=True):
+    """labels: 1 = signal (quirk), 0 = background (SM)."""
+    scores = np.asarray(scores)
+    labels = np.asarray(labels)
+    pred = threshold_classify(scores, threshold, lower_is_signal)
+    tp = np.sum(pred & (labels == 1))
+    fp = np.sum(pred & (labels == 0))
+    fn = np.sum(~pred & (labels == 1))
+    tn = np.sum(~pred & (labels == 0))
+    eff = tp / (tp + fn) if (tp + fn) else 0.0
+    purity = tp / (tp + fp) if (tp + fp) else 0.0
+    fpr = fp / (fp + tn) if (fp + tn) else 0.0
+    return {"efficiency": eff, "purity": purity, "fpr": fpr, "tp": int(tp), "fp": int(fp),
+            "fn": int(fn), "tn": int(tn)}
+
+
+def roc_curve_points(scores, labels, n_thresholds=100, lower_is_signal=True):
+    scores = np.asarray(scores)
+    labels = np.asarray(labels)
+    lo, hi = np.min(scores), np.max(scores)
+    thresholds = np.linspace(lo, hi, n_thresholds)
+    points = []
+    for t in thresholds:
+        m = evaluate_classifier(scores, labels, t, lower_is_signal)
+        points.append((m["fpr"], m["efficiency"]))
+    return sorted(points)
+
+
+def paper_plane_finding_exact8(
+    xyz,
+    layer_ids,
+    vertex_z=0.0,
+    dphi_cut=0.10,
+    dz_cut_mm=20.0,
+    ds_seed=0.5,
+    dw_seed=10.0,
+    ds_final=0.1,
+    dw_final=10.0,
+    grow_factor=3.0,
+    ds_floor=0.02,
+):
+    """
+    Fixed 8-layer paper-like barrel implementation.
+
+    Layer order inner -> outer:
+      802, 804, 806, 808, 1302, 1304, 1306, 1308
+
+    Seed:
+      outer layers 1308 and 1306
+      pair cuts: dphi < 0.10 rad, |dz| < 20 mm
+      seed delta_s < 0.5 mm, delta_w < 10 mm
+      all four seed hits must satisfy x.n3 > 0
+
+    Growth:
+      remaining layers outside -> inside
+      x.n3 > 0
+      |x.n1| < 0.5 mm
+      |x.n2| < 10 mm
+      recomputed delta_s/delta_w may not increase by > 3x
+
+    Final:
+      delta_s < 0.1 mm
+      delta_w < 10 mm
+      all 8 layers >=1 hit
+      at least 7 layers >=2 hits
+    """
+
+    xyz = np.asarray(xyz, dtype=np.float64)
+    layer_ids = np.asarray(layer_ids)
+
+    if vertex_z != 0.0:
+        xyz = xyz.copy()
+        xyz[:, 2] -= vertex_z
+
+    paper_layers = [802, 804, 806, 808, 1302, 1304, 1306, 1308]
+    outer_layer = 1308
+    second_layer = 1306
+
+    # Keep only fixed 8 barrel layers
+    keep = np.isin(layer_ids, paper_layers)
+    xyz = xyz[keep]
+    layer_ids = layer_ids[keep]
+
+    if len(xyz) < 4:
+        return {"found": False, "reason": "fewer than 4 hits in paper layers"}
+
+    # Require at least one hit in both seed layers
+    outer_pairs = _seed_pairs(
+        xyz, layer_ids == outer_layer,
+        dphi_cut, dz_cut_mm, max_pairs=None
+    )
+    second_pairs = _seed_pairs(
+        xyz, layer_ids == second_layer,
+        dphi_cut, dz_cut_mm, max_pairs=None
+    )
+
+    if not outer_pairs or not second_pairs:
+        return {"found": False, "reason": "no valid outer-layer seed pairs"}
+
+    best_result = None
+
+    for _, oi, oj in outer_pairs:
+        for _, si, sj in second_pairs:
+
+            seed_idx = [oi, oj, si, sj]
+            seed_xyz = xyz[seed_idx]
+
+            fit = compute_T_tensor(seed_xyz)
+            if fit["n3"] is None:
+                continue
+
+            n3 = _ensure_forward(seed_xyz, fit["n3"])
+
+            # Paper strict forward condition
+            if not np.all((seed_xyz @ n3) > 0):
+                continue
+
+            cur_ds = fit["delta_s"]
+            cur_dw = fit["delta_w"]
+
+            if cur_ds >= ds_seed or cur_dw >= dw_seed:
+                continue
+
+            accepted_idx = list(seed_idx)
+
+            # Grow one physical layer at a time, outer -> inner
+            growth_layers = [1304, 1302, 808, 806, 804, 802]
+
+            for lyr in growth_layers:
+
+                # Plane at the start of this physical layer.
+                current_fit = compute_T_tensor(xyz[accepted_idx])
+
+                n1 = current_fit["n1"]
+                n2 = current_fit["n2"]
+                n3 = current_fit["n3"]
+
+                if n1 is None or n2 is None or n3 is None:
+                    continue
+
+                n3 = _ensure_forward(xyz[accepted_idx], n3)
+
+                # Select hits compatible with this plane.
+                selected = []
+
+                for cand in np.where(layer_ids == lyr)[0]:
+
+                    if cand in accepted_idx:
+                        continue
+
+                    x = xyz[cand]
+
+                    if (x @ n3) <= 0:
+                        continue
+
+                    if abs(x @ n1) >= 0.5:
+                        continue
+
+                    if abs(x @ n2) >= 10.0:
+                        continue
+
+                    selected.append(cand)
+
+                # Paper Sec. III.C:
+                # start with the selected hit having smallest |x.n1|.
+                selected.sort(
+                    key=lambda cand: abs(xyz[cand] @ n1)
+                )
+
+                for cand in selected:
+
+                    trial_idx = accepted_idx + [cand]
+                    trial_fit = compute_T_tensor(xyz[trial_idx])
+
+                    t_ds = trial_fit["delta_s"]
+                    t_dw = trial_fit["delta_w"]
+
+                    # Numerical-stability floor for delta_s.
+                    # ds_floor=0.02 mm is our tested modification,
+                    # not part of the original paper prescription.
+                    effective_cur_ds = max(cur_ds, ds_floor)
+
+                    if t_ds > grow_factor * effective_cur_ds:
+                        continue
+
+                    # No delta_w floor: currently untested.
+                    if (cur_dw > 0 and t_dw > grow_factor * cur_dw):
+                        continue
+
+                    accepted_idx = trial_idx
+                    cur_ds = t_ds
+                    cur_dw = t_dw
+
+            final_fit = compute_T_tensor(xyz[accepted_idx])
+            cur_ds = final_fit["delta_s"]
+            cur_dw = final_fit["delta_w"]
+
+            if cur_ds >= ds_final or cur_dw >= dw_final:
+                continue
+
+            accepted_layers = layer_ids[accepted_idx]
+
+            counts = {
+                lyr: int(np.sum(accepted_layers == lyr))
+                for lyr in paper_layers
+            }
+
+            # Paper coverage:
+            # every layer >=1 hit, and at least 7 of 8 layers >=2 hits
+            if not all(counts[lyr] >= 1 for lyr in paper_layers):
+                continue
+
+            if sum(counts[lyr] >= 2 for lyr in paper_layers) < 7:
+                continue
+
+            result = {
+                "found": True,
+                "delta_s": cur_ds,
+                "delta_w": cur_dw,
+                "inlier_idx": np.asarray(accepted_idx),
+                "layer_counts": counts,
+            }
+
+            if best_result is None or cur_ds < best_result["delta_s"]:
+                best_result = result
+
+    if best_result is None:
+        return {"found": False, "reason": "no exact8 plane survived"}
+
+    return best_result

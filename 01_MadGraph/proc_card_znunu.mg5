@@ -1,0 +1,11 @@
+import model sm
+
+define p = g u c d s u~ c~ d~ s~
+define j = p
+
+define vl  = ve vm vt
+define vl~ = ve~ vm~ vt~
+
+generate p p > z a j, z > vl vl~
+
+output 01_MadGraph/ZgammaJ_Znunu

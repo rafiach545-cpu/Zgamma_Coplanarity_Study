@@ -1,0 +1,930 @@
+event,found,delta_s,delta_w,n_hits,reason
+5.0,False,,,30,no valid outer-layer seed pairs
+19.0,False,,,21,no valid outer-layer seed pairs
+29.0,False,,,24,no valid outer-layer seed pairs
+53.0,False,,,30,no valid outer-layer seed pairs
+70.0,False,,,24,no valid outer-layer seed pairs
+76.0,False,,,25,no valid outer-layer seed pairs
+87.0,False,,,22,no valid outer-layer seed pairs
+88.0,False,,,22,no valid outer-layer seed pairs
+100.0,False,,,27,no exact8 plane survived
+111.0,False,,,24,no valid outer-layer seed pairs
+125.0,False,,,21,no valid outer-layer seed pairs
+127.0,False,,,22,no valid outer-layer seed pairs
+138.0,False,,,29,no exact8 plane survived
+143.0,False,,,27,no valid outer-layer seed pairs
+154.0,False,,,26,no valid outer-layer seed pairs
+169.0,False,,,27,no exact8 plane survived
+181.0,False,,,25,no exact8 plane survived
+193.0,False,,,28,no valid outer-layer seed pairs
+212.0,False,,,22,no valid outer-layer seed pairs
+237.0,False,,,24,no valid outer-layer seed pairs
+250.0,False,,,28,no valid outer-layer seed pairs
+273.0,False,,,22,no valid outer-layer seed pairs
+284.0,False,,,27,no exact8 plane survived
+285.0,False,,,23,no valid outer-layer seed pairs
+287.0,False,,,21,no valid outer-layer seed pairs
+295.0,False,,,28,no valid outer-layer seed pairs
+302.0,False,,,21,no valid outer-layer seed pairs
+307.0,False,,,31,no valid outer-layer seed pairs
+310.0,False,,,27,no valid outer-layer seed pairs
+354.0,False,,,23,no valid outer-layer seed pairs
+356.0,False,,,26,no exact8 plane survived
+367.0,False,,,21,no exact8 plane survived
+381.0,False,,,21,no valid outer-layer seed pairs
+413.0,False,,,21,no valid outer-layer seed pairs
+432.0,False,,,24,no exact8 plane survived
+434.0,True,0.0007370257886792521,4.0775406480983944,23,
+441.0,False,,,24,no valid outer-layer seed pairs
+442.0,False,,,25,no valid outer-layer seed pairs
+443.0,False,,,25,no exact8 plane survived
+448.0,False,,,26,no valid outer-layer seed pairs
+454.0,False,,,22,no exact8 plane survived
+468.0,True,0.004263635732818934,2.720226358325497,27,
+470.0,False,,,31,no valid outer-layer seed pairs
+474.0,False,,,29,no exact8 plane survived
+506.0,False,,,23,no exact8 plane survived
+533.0,False,,,23,no valid outer-layer seed pairs
+535.0,False,,,29,no valid outer-layer seed pairs
+541.0,False,,,27,no valid outer-layer seed pairs
+558.0,False,,,26,no exact8 plane survived
+572.0,False,,,23,no valid outer-layer seed pairs
+579.0,False,,,21,no exact8 plane survived
+585.0,False,,,30,no valid outer-layer seed pairs
+592.0,False,,,29,no valid outer-layer seed pairs
+616.0,False,,,21,no valid outer-layer seed pairs
+622.0,False,,,21,no valid outer-layer seed pairs
+648.0,False,,,29,no exact8 plane survived
+656.0,False,,,25,no exact8 plane survived
+661.0,False,,,26,no exact8 plane survived
+663.0,False,,,21,no valid outer-layer seed pairs
+671.0,False,,,26,no valid outer-layer seed pairs
+675.0,False,,,22,no valid outer-layer seed pairs
+679.0,True,0.005650766986282328,3.667547265111275,25,
+693.0,False,,,20,no exact8 plane survived
+712.0,False,,,29,no valid outer-layer seed pairs
+714.0,True,0.01889019389217445,4.154982153062827,26,
+755.0,False,,,25,no exact8 plane survived
+758.0,False,,,21,no valid outer-layer seed pairs
+760.0,False,,,23,no exact8 plane survived
+764.0,False,,,25,no valid outer-layer seed pairs
+767.0,False,,,25,no valid outer-layer seed pairs
+774.0,True,0.006536303512632268,2.459758977894058,22,
+777.0,False,,,25,no exact8 plane survived
+793.0,False,,,25,no valid outer-layer seed pairs
+797.0,False,,,25,no valid outer-layer seed pairs
+800.0,False,,,22,no valid outer-layer seed pairs
+803.0,False,,,32,no valid outer-layer seed pairs
+810.0,False,,,24,no exact8 plane survived
+832.0,True,0.0016884375066527717,3.9532198730851027,22,
+833.0,False,,,28,no valid outer-layer seed pairs
+835.0,False,,,21,no exact8 plane survived
+850.0,False,,,25,no valid outer-layer seed pairs
+851.0,False,,,26,no valid outer-layer seed pairs
+861.0,False,,,24,no exact8 plane survived
+866.0,False,,,24,no exact8 plane survived
+882.0,True,0.014566098669034922,4.182941933477828,21,
+886.0,False,,,34,no exact8 plane survived
+914.0,False,,,24,no valid outer-layer seed pairs
+917.0,False,,,21,no valid outer-layer seed pairs
+939.0,False,,,25,no valid outer-layer seed pairs
+948.0,False,,,24,no valid outer-layer seed pairs
+962.0,False,,,24,no valid outer-layer seed pairs
+966.0,False,,,23,no exact8 plane survived
+1018.0,False,,,28,no valid outer-layer seed pairs
+1034.0,True,0.0043732337132770084,2.7487745357299818,20,
+1044.0,False,,,23,no valid outer-layer seed pairs
+1048.0,False,,,23,no valid outer-layer seed pairs
+1066.0,True,0.008270545615578965,4.145595169128246,21,
+1088.0,False,,,21,no valid outer-layer seed pairs
+1092.0,False,,,22,no valid outer-layer seed pairs
+1116.0,False,,,25,no exact8 plane survived
+1148.0,False,,,28,no valid outer-layer seed pairs
+1163.0,False,,,24,no exact8 plane survived
+1180.0,False,,,28,no valid outer-layer seed pairs
+1186.0,False,,,23,no valid outer-layer seed pairs
+1200.0,False,,,23,no exact8 plane survived
+1203.0,False,,,23,no exact8 plane survived
+1204.0,False,,,29,no valid outer-layer seed pairs
+1205.0,False,,,18,no valid outer-layer seed pairs
+1208.0,False,,,26,no valid outer-layer seed pairs
+1217.0,False,,,22,no valid outer-layer seed pairs
+1231.0,False,,,26,no exact8 plane survived
+1253.0,False,,,27,no valid outer-layer seed pairs
+1254.0,False,,,22,no valid outer-layer seed pairs
+1269.0,False,,,25,no valid outer-layer seed pairs
+1270.0,False,,,26,no valid outer-layer seed pairs
+1279.0,False,,,26,no exact8 plane survived
+1286.0,False,,,25,no valid outer-layer seed pairs
+1294.0,False,,,27,no valid outer-layer seed pairs
+1302.0,False,,,23,no exact8 plane survived
+1312.0,False,,,20,no valid outer-layer seed pairs
+1352.0,False,,,28,no valid outer-layer seed pairs
+1365.0,False,,,23,no valid outer-layer seed pairs
+1370.0,False,,,24,no valid outer-layer seed pairs
+1371.0,False,,,29,no exact8 plane survived
+1374.0,False,,,26,no valid outer-layer seed pairs
+1379.0,True,0.0018118965292859043,4.562204164013796,24,
+1413.0,False,,,23,no valid outer-layer seed pairs
+1421.0,False,,,28,no valid outer-layer seed pairs
+1428.0,False,,,25,no valid outer-layer seed pairs
+1433.0,False,,,22,no valid outer-layer seed pairs
+1439.0,False,,,26,no valid outer-layer seed pairs
+1444.0,False,,,23,no exact8 plane survived
+1448.0,False,,,31,no valid outer-layer seed pairs
+1452.0,False,,,29,no valid outer-layer seed pairs
+1460.0,False,,,23,no valid outer-layer seed pairs
+1466.0,False,,,26,no valid outer-layer seed pairs
+1487.0,False,,,23,no valid outer-layer seed pairs
+1488.0,False,,,23,no exact8 plane survived
+1493.0,False,,,25,no valid outer-layer seed pairs
+1503.0,False,,,29,no valid outer-layer seed pairs
+1505.0,False,,,34,no valid outer-layer seed pairs
+1518.0,True,0.018402953735763287,4.4189331508120375,23,
+1545.0,False,,,23,no exact8 plane survived
+1549.0,False,,,28,no valid outer-layer seed pairs
+1554.0,False,,,32,no valid outer-layer seed pairs
+1598.0,False,,,21,no valid outer-layer seed pairs
+1630.0,False,,,25,no exact8 plane survived
+1631.0,False,,,21,no valid outer-layer seed pairs
+1655.0,False,,,26,no exact8 plane survived
+1684.0,False,,,23,no valid outer-layer seed pairs
+1687.0,False,,,22,no valid outer-layer seed pairs
+1691.0,False,,,24,no valid outer-layer seed pairs
+1709.0,False,,,23,no exact8 plane survived
+1728.0,False,,,22,no valid outer-layer seed pairs
+1738.0,False,,,29,no valid outer-layer seed pairs
+1777.0,False,,,25,no valid outer-layer seed pairs
+1791.0,False,,,25,no exact8 plane survived
+1796.0,False,,,27,no valid outer-layer seed pairs
+1799.0,False,,,24,no valid outer-layer seed pairs
+1802.0,False,,,23,no valid outer-layer seed pairs
+1813.0,False,,,26,no valid outer-layer seed pairs
+1836.0,False,,,25,no valid outer-layer seed pairs
+1838.0,False,,,25,no exact8 plane survived
+1840.0,False,,,20,no valid outer-layer seed pairs
+1866.0,False,,,22,no exact8 plane survived
+1883.0,False,,,25,no valid outer-layer seed pairs
+1886.0,False,,,26,no valid outer-layer seed pairs
+1902.0,True,0.010513307586568321,3.7274124121649352,24,
+1913.0,False,,,27,no valid outer-layer seed pairs
+1914.0,False,,,29,no exact8 plane survived
+1918.0,False,,,22,no exact8 plane survived
+1975.0,False,,,21,no valid outer-layer seed pairs
+1980.0,False,,,22,no exact8 plane survived
+1981.0,False,,,25,no exact8 plane survived
+1983.0,False,,,24,no exact8 plane survived
+1989.0,False,,,20,no valid outer-layer seed pairs
+1992.0,False,,,31,no valid outer-layer seed pairs
+2009.0,False,,,27,no exact8 plane survived
+2012.0,False,,,27,no valid outer-layer seed pairs
+2023.0,False,,,27,no valid outer-layer seed pairs
+2032.0,False,,,21,no valid outer-layer seed pairs
+2035.0,False,,,26,no valid outer-layer seed pairs
+2041.0,False,,,18,no valid outer-layer seed pairs
+2050.0,False,,,26,no exact8 plane survived
+2075.0,False,,,26,no exact8 plane survived
+2078.0,False,,,23,no exact8 plane survived
+2096.0,False,,,24,no valid outer-layer seed pairs
+2103.0,False,,,26,no valid outer-layer seed pairs
+2108.0,False,,,21,no valid outer-layer seed pairs
+2116.0,False,,,27,no valid outer-layer seed pairs
+2123.0,False,,,24,no exact8 plane survived
+2131.0,False,,,26,no valid outer-layer seed pairs
+2137.0,False,,,23,no exact8 plane survived
+2145.0,True,0.0022289347388234917,1.7412761808678652,24,
+2149.0,False,,,24,no valid outer-layer seed pairs
+2165.0,True,0.0028694924975238615,1.8207426228154078,22,
+2182.0,False,,,23,no valid outer-layer seed pairs
+2200.0,False,,,22,no valid outer-layer seed pairs
+2204.0,False,,,22,no valid outer-layer seed pairs
+2208.0,False,,,30,no exact8 plane survived
+2215.0,False,,,24,no valid outer-layer seed pairs
+2216.0,False,,,26,no exact8 plane survived
+2234.0,False,,,25,no valid outer-layer seed pairs
+2237.0,False,,,30,no valid outer-layer seed pairs
+2239.0,False,,,30,no valid outer-layer seed pairs
+2244.0,False,,,24,no valid outer-layer seed pairs
+2247.0,False,,,26,no exact8 plane survived
+2282.0,False,,,26,no exact8 plane survived
+2285.0,False,,,21,no valid outer-layer seed pairs
+2307.0,False,,,27,no valid outer-layer seed pairs
+2321.0,False,,,23,no exact8 plane survived
+2322.0,False,,,22,no valid outer-layer seed pairs
+2326.0,False,,,18,no valid outer-layer seed pairs
+2335.0,False,,,21,no valid outer-layer seed pairs
+2353.0,False,,,20,no valid outer-layer seed pairs
+2358.0,False,,,26,no valid outer-layer seed pairs
+2371.0,False,,,22,no exact8 plane survived
+2381.0,False,,,22,no valid outer-layer seed pairs
+2392.0,False,,,25,no exact8 plane survived
+2395.0,False,,,24,no exact8 plane survived
+2396.0,False,,,20,no exact8 plane survived
+2409.0,True,0.011081976982246992,3.619855717968347,25,
+2418.0,False,,,26,no valid outer-layer seed pairs
+2419.0,True,0.001209293619309837,1.9335631381570593,28,
+2421.0,False,,,27,no valid outer-layer seed pairs
+2438.0,False,,,26,no valid outer-layer seed pairs
+2440.0,False,,,23,no valid outer-layer seed pairs
+2445.0,False,,,25,no valid outer-layer seed pairs
+2448.0,False,,,24,no valid outer-layer seed pairs
+2449.0,False,,,44,no exact8 plane survived
+2450.0,False,,,22,no valid outer-layer seed pairs
+2462.0,False,,,20,no valid outer-layer seed pairs
+2484.0,False,,,25,no valid outer-layer seed pairs
+2485.0,False,,,24,no valid outer-layer seed pairs
+2489.0,False,,,23,no valid outer-layer seed pairs
+2492.0,False,,,22,no exact8 plane survived
+2496.0,False,,,28,no valid outer-layer seed pairs
+2521.0,False,,,20,no valid outer-layer seed pairs
+2526.0,False,,,28,no valid outer-layer seed pairs
+2529.0,False,,,23,no valid outer-layer seed pairs
+2550.0,False,,,22,no valid outer-layer seed pairs
+2566.0,False,,,25,no exact8 plane survived
+2579.0,False,,,22,no valid outer-layer seed pairs
+2596.0,False,,,22,no valid outer-layer seed pairs
+2604.0,False,,,23,no valid outer-layer seed pairs
+2609.0,False,,,20,no exact8 plane survived
+2617.0,False,,,23,no valid outer-layer seed pairs
+2638.0,False,,,21,no valid outer-layer seed pairs
+2644.0,False,,,24,no valid outer-layer seed pairs
+2663.0,False,,,27,no valid outer-layer seed pairs
+2666.0,False,,,22,no valid outer-layer seed pairs
+2673.0,False,,,27,no valid outer-layer seed pairs
+2674.0,False,,,22,no valid outer-layer seed pairs
+2677.0,False,,,25,no valid outer-layer seed pairs
+2687.0,False,,,24,no valid outer-layer seed pairs
+2689.0,False,,,21,no exact8 plane survived
+2691.0,False,,,24,no valid outer-layer seed pairs
+2704.0,False,,,26,no exact8 plane survived
+2712.0,False,,,26,no exact8 plane survived
+2741.0,False,,,24,no valid outer-layer seed pairs
+2780.0,False,,,22,no exact8 plane survived
+2810.0,False,,,29,no valid outer-layer seed pairs
+2832.0,False,,,21,no exact8 plane survived
+2844.0,False,,,22,no valid outer-layer seed pairs
+2854.0,False,,,21,no valid outer-layer seed pairs
+2863.0,False,,,29,no valid outer-layer seed pairs
+2869.0,False,,,26,no exact8 plane survived
+2881.0,False,,,26,no valid outer-layer seed pairs
+2890.0,False,,,27,no valid outer-layer seed pairs
+2909.0,False,,,18,no valid outer-layer seed pairs
+2920.0,False,,,20,no exact8 plane survived
+2928.0,False,,,21,no exact8 plane survived
+2931.0,False,,,27,no exact8 plane survived
+2932.0,False,,,26,no exact8 plane survived
+2941.0,False,,,30,no exact8 plane survived
+2959.0,False,,,22,no exact8 plane survived
+2967.0,False,,,24,no exact8 plane survived
+2989.0,False,,,24,no exact8 plane survived
+2993.0,False,,,26,no valid outer-layer seed pairs
+3000.0,False,,,28,no valid outer-layer seed pairs
+3002.0,False,,,24,no valid outer-layer seed pairs
+3007.0,False,,,22,no valid outer-layer seed pairs
+3016.0,False,,,22,no valid outer-layer seed pairs
+3028.0,False,,,27,no valid outer-layer seed pairs
+3039.0,False,,,26,no exact8 plane survived
+3042.0,False,,,20,no valid outer-layer seed pairs
+3045.0,False,,,29,no exact8 plane survived
+3059.0,True,0.0005269880929522943,0.7211567851485429,27,
+3061.0,False,,,25,no valid outer-layer seed pairs
+3080.0,False,,,25,no exact8 plane survived
+3105.0,False,,,33,no valid outer-layer seed pairs
+3107.0,False,,,26,no valid outer-layer seed pairs
+3109.0,False,,,21,no exact8 plane survived
+3123.0,False,,,22,no valid outer-layer seed pairs
+3128.0,False,,,22,no valid outer-layer seed pairs
+3132.0,False,,,21,no valid outer-layer seed pairs
+3143.0,False,,,23,no exact8 plane survived
+3157.0,False,,,29,no exact8 plane survived
+3163.0,False,,,20,no exact8 plane survived
+3177.0,False,,,28,no valid outer-layer seed pairs
+3198.0,False,,,24,no exact8 plane survived
+3226.0,False,,,24,no valid outer-layer seed pairs
+3227.0,False,,,22,no valid outer-layer seed pairs
+3269.0,False,,,28,no exact8 plane survived
+3270.0,False,,,27,no valid outer-layer seed pairs
+3274.0,False,,,25,no exact8 plane survived
+3280.0,False,,,23,no valid outer-layer seed pairs
+3287.0,False,,,25,no valid outer-layer seed pairs
+3293.0,False,,,23,no valid outer-layer seed pairs
+3294.0,False,,,26,no valid outer-layer seed pairs
+3303.0,False,,,25,no exact8 plane survived
+3305.0,False,,,25,no valid outer-layer seed pairs
+3312.0,False,,,22,no valid outer-layer seed pairs
+3315.0,False,,,22,no valid outer-layer seed pairs
+3321.0,False,,,29,no valid outer-layer seed pairs
+3322.0,False,,,23,no valid outer-layer seed pairs
+3329.0,False,,,27,no valid outer-layer seed pairs
+3335.0,False,,,25,no exact8 plane survived
+3344.0,False,,,24,no valid outer-layer seed pairs
+3345.0,False,,,24,no valid outer-layer seed pairs
+3347.0,False,,,26,no valid outer-layer seed pairs
+3355.0,False,,,24,no valid outer-layer seed pairs
+3371.0,True,0.001593582758871853,1.7349364622204786,23,
+3393.0,False,,,25,no valid outer-layer seed pairs
+3399.0,False,,,26,no valid outer-layer seed pairs
+3400.0,False,,,23,no exact8 plane survived
+3402.0,False,,,24,no valid outer-layer seed pairs
+3421.0,False,,,24,no valid outer-layer seed pairs
+3423.0,False,,,23,no exact8 plane survived
+3428.0,False,,,23,no valid outer-layer seed pairs
+3441.0,False,,,24,no valid outer-layer seed pairs
+3448.0,False,,,23,no valid outer-layer seed pairs
+3449.0,False,,,24,no valid outer-layer seed pairs
+3450.0,False,,,26,no exact8 plane survived
+3452.0,False,,,25,no valid outer-layer seed pairs
+3458.0,False,,,26,no exact8 plane survived
+3461.0,False,,,27,no exact8 plane survived
+3463.0,False,,,27,no valid outer-layer seed pairs
+3477.0,False,,,26,no valid outer-layer seed pairs
+3495.0,False,,,28,no exact8 plane survived
+3497.0,False,,,30,no valid outer-layer seed pairs
+3516.0,False,,,26,no valid outer-layer seed pairs
+3521.0,False,,,26,no valid outer-layer seed pairs
+3538.0,False,,,24,no valid outer-layer seed pairs
+3541.0,False,,,19,no valid outer-layer seed pairs
+3545.0,False,,,21,no exact8 plane survived
+3560.0,False,,,24,no exact8 plane survived
+3565.0,False,,,22,no valid outer-layer seed pairs
+3573.0,False,,,23,no valid outer-layer seed pairs
+3581.0,False,,,30,no valid outer-layer seed pairs
+3585.0,False,,,22,no valid outer-layer seed pairs
+3589.0,False,,,24,no valid outer-layer seed pairs
+3604.0,False,,,26,no valid outer-layer seed pairs
+3605.0,False,,,26,no valid outer-layer seed pairs
+3611.0,False,,,26,no valid outer-layer seed pairs
+3616.0,False,,,23,no valid outer-layer seed pairs
+3648.0,False,,,28,no valid outer-layer seed pairs
+3659.0,False,,,26,no valid outer-layer seed pairs
+3688.0,False,,,23,no valid outer-layer seed pairs
+3689.0,False,,,23,no exact8 plane survived
+3740.0,False,,,25,no exact8 plane survived
+3755.0,False,,,21,no valid outer-layer seed pairs
+3756.0,False,,,24,no valid outer-layer seed pairs
+3767.0,False,,,24,no valid outer-layer seed pairs
+3801.0,True,0.017188982340706146,3.993604890408049,25,
+3807.0,False,,,24,no exact8 plane survived
+3810.0,False,,,25,no valid outer-layer seed pairs
+3821.0,False,,,24,no valid outer-layer seed pairs
+3825.0,False,,,25,no exact8 plane survived
+3847.0,False,,,26,no valid outer-layer seed pairs
+3854.0,False,,,28,no valid outer-layer seed pairs
+3859.0,False,,,24,no exact8 plane survived
+3861.0,False,,,25,no valid outer-layer seed pairs
+3866.0,False,,,27,no valid outer-layer seed pairs
+3867.0,False,,,26,no valid outer-layer seed pairs
+3873.0,False,,,27,no valid outer-layer seed pairs
+3915.0,False,,,26,no exact8 plane survived
+3921.0,False,,,29,no valid outer-layer seed pairs
+3934.0,False,,,25,no valid outer-layer seed pairs
+3936.0,False,,,29,no valid outer-layer seed pairs
+3949.0,False,,,31,no valid outer-layer seed pairs
+3952.0,False,,,25,no valid outer-layer seed pairs
+3965.0,False,,,27,no exact8 plane survived
+3973.0,False,,,24,no valid outer-layer seed pairs
+3977.0,False,,,20,no valid outer-layer seed pairs
+3986.0,False,,,24,no exact8 plane survived
+3996.0,False,,,30,no valid outer-layer seed pairs
+4012.0,False,,,30,no valid outer-layer seed pairs
+4035.0,False,,,18,no valid outer-layer seed pairs
+4037.0,False,,,24,no valid outer-layer seed pairs
+4053.0,False,,,34,no valid outer-layer seed pairs
+4056.0,False,,,24,no exact8 plane survived
+4063.0,False,,,25,no valid outer-layer seed pairs
+4114.0,False,,,28,no exact8 plane survived
+4120.0,True,6.724806472090126e-05,3.578566635433478,30,
+4121.0,False,,,23,no valid outer-layer seed pairs
+4128.0,False,,,25,no exact8 plane survived
+4136.0,False,,,21,no valid outer-layer seed pairs
+4148.0,False,,,26,no valid outer-layer seed pairs
+4159.0,False,,,24,no exact8 plane survived
+4161.0,False,,,29,no valid outer-layer seed pairs
+4165.0,False,,,28,no valid outer-layer seed pairs
+4170.0,False,,,22,no valid outer-layer seed pairs
+4178.0,False,,,23,no valid outer-layer seed pairs
+4181.0,False,,,25,no valid outer-layer seed pairs
+4182.0,True,0.013678555551040613,3.829386083769331,21,
+4200.0,False,,,27,no exact8 plane survived
+4205.0,False,,,19,no valid outer-layer seed pairs
+4263.0,False,,,29,no valid outer-layer seed pairs
+4277.0,False,,,24,no valid outer-layer seed pairs
+4296.0,False,,,23,no valid outer-layer seed pairs
+4327.0,False,,,25,no valid outer-layer seed pairs
+4334.0,False,,,21,no exact8 plane survived
+4338.0,False,,,26,no exact8 plane survived
+4347.0,False,,,25,no valid outer-layer seed pairs
+4349.0,False,,,18,no valid outer-layer seed pairs
+4358.0,False,,,20,no valid outer-layer seed pairs
+4380.0,True,0.015651376422025104,4.373725365789357,20,
+4382.0,False,,,19,no valid outer-layer seed pairs
+4400.0,False,,,20,no valid outer-layer seed pairs
+4412.0,False,,,26,no exact8 plane survived
+4416.0,False,,,23,no valid outer-layer seed pairs
+4426.0,False,,,29,no valid outer-layer seed pairs
+4429.0,False,,,27,no valid outer-layer seed pairs
+4444.0,False,,,29,fewer than 4 hits in paper layers
+4452.0,False,,,23,no valid outer-layer seed pairs
+4453.0,False,,,19,no valid outer-layer seed pairs
+4472.0,False,,,22,no exact8 plane survived
+4477.0,False,,,27,no valid outer-layer seed pairs
+4488.0,False,,,22,no exact8 plane survived
+4489.0,False,,,23,no exact8 plane survived
+4490.0,False,,,22,no exact8 plane survived
+4502.0,False,,,22,no valid outer-layer seed pairs
+4512.0,False,,,24,no exact8 plane survived
+4521.0,False,,,29,no valid outer-layer seed pairs
+4524.0,False,,,30,no valid outer-layer seed pairs
+4531.0,False,,,23,no valid outer-layer seed pairs
+4534.0,False,,,20,no valid outer-layer seed pairs
+4535.0,False,,,20,no exact8 plane survived
+4536.0,False,,,24,no exact8 plane survived
+4550.0,False,,,32,no valid outer-layer seed pairs
+4554.0,False,,,24,no valid outer-layer seed pairs
+4580.0,False,,,23,no exact8 plane survived
+4605.0,False,,,26,no valid outer-layer seed pairs
+4614.0,False,,,23,no valid outer-layer seed pairs
+4620.0,False,,,20,no valid outer-layer seed pairs
+4622.0,False,,,22,no valid outer-layer seed pairs
+4633.0,False,,,26,no valid outer-layer seed pairs
+4644.0,False,,,24,no valid outer-layer seed pairs
+4655.0,False,,,21,no exact8 plane survived
+4664.0,False,,,21,no valid outer-layer seed pairs
+4679.0,False,,,28,no exact8 plane survived
+4706.0,False,,,23,no valid outer-layer seed pairs
+4726.0,False,,,24,no valid outer-layer seed pairs
+4743.0,True,0.003563288824776594,3.0138342803391573,22,
+4748.0,False,,,26,no valid outer-layer seed pairs
+4749.0,False,,,21,no valid outer-layer seed pairs
+4759.0,False,,,24,no valid outer-layer seed pairs
+4761.0,False,,,28,no valid outer-layer seed pairs
+4768.0,True,0.01372919978112005,4.395223577030801,24,
+4777.0,False,,,24,no exact8 plane survived
+4787.0,False,,,26,no valid outer-layer seed pairs
+4789.0,False,,,21,no exact8 plane survived
+4848.0,False,,,22,no valid outer-layer seed pairs
+4854.0,False,,,29,no valid outer-layer seed pairs
+4856.0,False,,,27,no valid outer-layer seed pairs
+4876.0,False,,,25,no valid outer-layer seed pairs
+4886.0,False,,,21,no exact8 plane survived
+4893.0,False,,,22,no valid outer-layer seed pairs
+4896.0,False,,,25,no valid outer-layer seed pairs
+4921.0,False,,,23,no valid outer-layer seed pairs
+4940.0,False,,,24,no exact8 plane survived
+4953.0,False,,,23,no valid outer-layer seed pairs
+4960.0,False,,,24,no valid outer-layer seed pairs
+4961.0,False,,,22,no valid outer-layer seed pairs
+4975.0,False,,,23,no valid outer-layer seed pairs
+4989.0,False,,,23,no valid outer-layer seed pairs
+4991.0,False,,,25,no exact8 plane survived
+4992.0,False,,,22,no valid outer-layer seed pairs
+4994.0,False,,,24,no valid outer-layer seed pairs
+5010.0,False,,,22,no valid outer-layer seed pairs
+5021.0,False,,,27,no exact8 plane survived
+5037.0,False,,,24,no valid outer-layer seed pairs
+5060.0,False,,,24,no valid outer-layer seed pairs
+5061.0,False,,,27,no valid outer-layer seed pairs
+5079.0,False,,,22,no valid outer-layer seed pairs
+5084.0,False,,,21,no valid outer-layer seed pairs
+5173.0,False,,,25,no valid outer-layer seed pairs
+5200.0,False,,,28,no valid outer-layer seed pairs
+5204.0,False,,,25,no valid outer-layer seed pairs
+5207.0,False,,,25,no valid outer-layer seed pairs
+5227.0,False,,,26,no valid outer-layer seed pairs
+5242.0,False,,,23,no valid outer-layer seed pairs
+5270.0,False,,,25,no valid outer-layer seed pairs
+5271.0,False,,,19,no valid outer-layer seed pairs
+5273.0,False,,,23,no valid outer-layer seed pairs
+5302.0,False,,,26,no exact8 plane survived
+5328.0,False,,,26,no valid outer-layer seed pairs
+5347.0,True,0.012834524940133896,3.812016497458371,24,
+5363.0,False,,,27,no valid outer-layer seed pairs
+5370.0,False,,,23,no valid outer-layer seed pairs
+5381.0,False,,,24,no exact8 plane survived
+5382.0,False,,,34,no valid outer-layer seed pairs
+5397.0,False,,,23,no exact8 plane survived
+5400.0,False,,,23,no exact8 plane survived
+5401.0,False,,,27,no valid outer-layer seed pairs
+5419.0,False,,,26,no valid outer-layer seed pairs
+5421.0,False,,,23,no valid outer-layer seed pairs
+5423.0,False,,,21,no valid outer-layer seed pairs
+5428.0,True,0.0003664883502921082,1.5494421623255805,23,
+5430.0,False,,,25,no valid outer-layer seed pairs
+5432.0,False,,,24,no valid outer-layer seed pairs
+5452.0,False,,,23,no valid outer-layer seed pairs
+5453.0,False,,,22,no valid outer-layer seed pairs
+5455.0,False,,,28,no exact8 plane survived
+5456.0,False,,,24,no valid outer-layer seed pairs
+5464.0,False,,,24,no valid outer-layer seed pairs
+5469.0,False,,,23,no valid outer-layer seed pairs
+5475.0,False,,,25,no exact8 plane survived
+5500.0,True,0.0055000302883760465,3.7722181913900896,28,
+5514.0,False,,,25,no exact8 plane survived
+5548.0,False,,,24,no exact8 plane survived
+5553.0,True,0.0009307898150145282,0.9973383067268511,26,
+5566.0,False,,,21,no valid outer-layer seed pairs
+5570.0,False,,,25,no exact8 plane survived
+5573.0,False,,,22,no valid outer-layer seed pairs
+5591.0,False,,,24,no valid outer-layer seed pairs
+5595.0,False,,,21,no valid outer-layer seed pairs
+5611.0,False,,,24,no valid outer-layer seed pairs
+5623.0,False,,,21,no valid outer-layer seed pairs
+5637.0,False,,,23,no valid outer-layer seed pairs
+5650.0,False,,,31,no valid outer-layer seed pairs
+5667.0,False,,,25,no valid outer-layer seed pairs
+5675.0,False,,,28,no exact8 plane survived
+5687.0,False,,,24,no exact8 plane survived
+5702.0,False,,,31,no valid outer-layer seed pairs
+5711.0,False,,,25,no valid outer-layer seed pairs
+5716.0,False,,,25,no valid outer-layer seed pairs
+5722.0,True,0.0027338637817125085,1.768918870833646,22,
+5724.0,False,,,21,no valid outer-layer seed pairs
+5735.0,False,,,26,no valid outer-layer seed pairs
+5736.0,False,,,20,no valid outer-layer seed pairs
+5754.0,False,,,25,no valid outer-layer seed pairs
+5797.0,True,0.005852116060078277,3.0003566017317436,23,
+5810.0,False,,,24,no exact8 plane survived
+5830.0,False,,,25,no exact8 plane survived
+5853.0,False,,,28,no valid outer-layer seed pairs
+5861.0,False,,,26,no exact8 plane survived
+5866.0,False,,,23,no exact8 plane survived
+5871.0,False,,,22,no valid outer-layer seed pairs
+5881.0,False,,,21,no valid outer-layer seed pairs
+5886.0,False,,,25,no exact8 plane survived
+5890.0,False,,,24,no exact8 plane survived
+5895.0,False,,,22,no valid outer-layer seed pairs
+5900.0,False,,,23,no valid outer-layer seed pairs
+5909.0,False,,,25,no valid outer-layer seed pairs
+5923.0,False,,,23,no exact8 plane survived
+5947.0,False,,,28,no valid outer-layer seed pairs
+5948.0,False,,,22,no valid outer-layer seed pairs
+5961.0,False,,,24,no valid outer-layer seed pairs
+5963.0,False,,,24,no valid outer-layer seed pairs
+5964.0,False,,,27,no valid outer-layer seed pairs
+5970.0,False,,,24,no valid outer-layer seed pairs
+5980.0,False,,,32,no valid outer-layer seed pairs
+5983.0,False,,,30,no exact8 plane survived
+5984.0,False,,,22,no valid outer-layer seed pairs
+6007.0,False,,,25,no valid outer-layer seed pairs
+6012.0,False,,,26,no valid outer-layer seed pairs
+6017.0,False,,,28,no valid outer-layer seed pairs
+6023.0,False,,,24,no valid outer-layer seed pairs
+6024.0,False,,,23,no valid outer-layer seed pairs
+6039.0,False,,,27,no valid outer-layer seed pairs
+6043.0,False,,,32,no valid outer-layer seed pairs
+6073.0,False,,,23,no valid outer-layer seed pairs
+6076.0,False,,,25,no valid outer-layer seed pairs
+6101.0,False,,,26,no valid outer-layer seed pairs
+6121.0,False,,,26,no valid outer-layer seed pairs
+6123.0,False,,,27,no valid outer-layer seed pairs
+6130.0,False,,,29,no valid outer-layer seed pairs
+6155.0,False,,,26,no valid outer-layer seed pairs
+6159.0,False,,,27,no valid outer-layer seed pairs
+6164.0,False,,,24,no exact8 plane survived
+6169.0,False,,,30,no valid outer-layer seed pairs
+6171.0,False,,,25,no valid outer-layer seed pairs
+6193.0,False,,,21,no valid outer-layer seed pairs
+6202.0,False,,,24,no valid outer-layer seed pairs
+6218.0,False,,,27,no exact8 plane survived
+6220.0,False,,,28,no valid outer-layer seed pairs
+6227.0,False,,,25,no exact8 plane survived
+6231.0,False,,,25,no valid outer-layer seed pairs
+6234.0,False,,,24,no valid outer-layer seed pairs
+6245.0,False,,,22,no exact8 plane survived
+6261.0,False,,,23,no valid outer-layer seed pairs
+6279.0,False,,,25,no valid outer-layer seed pairs
+6287.0,False,,,25,no valid outer-layer seed pairs
+6290.0,False,,,25,no valid outer-layer seed pairs
+6309.0,False,,,28,no valid outer-layer seed pairs
+6317.0,False,,,31,no valid outer-layer seed pairs
+6325.0,False,,,26,no valid outer-layer seed pairs
+6333.0,False,,,27,no exact8 plane survived
+6334.0,False,,,25,no valid outer-layer seed pairs
+6350.0,False,,,25,no valid outer-layer seed pairs
+6351.0,False,,,29,no exact8 plane survived
+6357.0,False,,,19,no valid outer-layer seed pairs
+6361.0,False,,,28,no valid outer-layer seed pairs
+6363.0,False,,,23,no valid outer-layer seed pairs
+6364.0,False,,,25,no valid outer-layer seed pairs
+6370.0,False,,,25,no exact8 plane survived
+6376.0,False,,,22,no exact8 plane survived
+6390.0,False,,,27,no valid outer-layer seed pairs
+6399.0,False,,,22,no exact8 plane survived
+6400.0,False,,,25,no valid outer-layer seed pairs
+6404.0,False,,,22,no valid outer-layer seed pairs
+6407.0,False,,,25,no exact8 plane survived
+6422.0,False,,,26,no valid outer-layer seed pairs
+6436.0,False,,,23,no valid outer-layer seed pairs
+6438.0,False,,,21,no exact8 plane survived
+6440.0,False,,,23,no valid outer-layer seed pairs
+6462.0,False,,,21,no valid outer-layer seed pairs
+6476.0,False,,,24,no valid outer-layer seed pairs
+6491.0,False,,,26,no valid outer-layer seed pairs
+6493.0,False,,,22,no valid outer-layer seed pairs
+6519.0,False,,,27,no valid outer-layer seed pairs
+6526.0,True,0.00426543125649134,2.162584071218784,26,
+6529.0,False,,,26,no valid outer-layer seed pairs
+6546.0,False,,,21,no valid outer-layer seed pairs
+6550.0,False,,,23,no valid outer-layer seed pairs
+6552.0,False,,,27,no valid outer-layer seed pairs
+6553.0,False,,,28,no valid outer-layer seed pairs
+6557.0,False,,,25,no exact8 plane survived
+6558.0,False,,,23,no valid outer-layer seed pairs
+6563.0,False,,,27,no exact8 plane survived
+6568.0,False,,,22,no valid outer-layer seed pairs
+6590.0,False,,,25,no valid outer-layer seed pairs
+6660.0,False,,,26,no exact8 plane survived
+6692.0,False,,,29,no exact8 plane survived
+6700.0,False,,,26,no valid outer-layer seed pairs
+6714.0,False,,,27,no valid outer-layer seed pairs
+6715.0,False,,,29,no valid outer-layer seed pairs
+6767.0,False,,,30,no valid outer-layer seed pairs
+6780.0,False,,,29,no valid outer-layer seed pairs
+6787.0,False,,,21,no valid outer-layer seed pairs
+6799.0,False,,,23,no valid outer-layer seed pairs
+6802.0,False,,,26,no valid outer-layer seed pairs
+6818.0,False,,,23,no valid outer-layer seed pairs
+6823.0,False,,,25,no valid outer-layer seed pairs
+6825.0,False,,,28,no valid outer-layer seed pairs
+6829.0,False,,,22,no valid outer-layer seed pairs
+6842.0,False,,,25,no exact8 plane survived
+6849.0,False,,,29,no valid outer-layer seed pairs
+6885.0,False,,,22,no valid outer-layer seed pairs
+6898.0,False,,,20,no exact8 plane survived
+6900.0,False,,,24,no valid outer-layer seed pairs
+6909.0,False,,,24,no valid outer-layer seed pairs
+6922.0,False,,,24,no exact8 plane survived
+6924.0,False,,,22,no valid outer-layer seed pairs
+6931.0,False,,,23,no exact8 plane survived
+6940.0,False,,,22,no valid outer-layer seed pairs
+6945.0,False,,,29,no valid outer-layer seed pairs
+6946.0,False,,,23,no valid outer-layer seed pairs
+6947.0,False,,,26,no exact8 plane survived
+6979.0,False,,,22,no exact8 plane survived
+6992.0,False,,,24,no exact8 plane survived
+7027.0,False,,,22,no valid outer-layer seed pairs
+7035.0,False,,,26,no valid outer-layer seed pairs
+7037.0,False,,,19,no valid outer-layer seed pairs
+7043.0,False,,,30,no exact8 plane survived
+7045.0,False,,,21,no valid outer-layer seed pairs
+7046.0,True,0.008701608524284728,4.618894682469778,25,
+7047.0,False,,,29,no exact8 plane survived
+7053.0,False,,,21,no valid outer-layer seed pairs
+7059.0,False,,,27,no valid outer-layer seed pairs
+7066.0,False,,,26,no exact8 plane survived
+7091.0,False,,,28,no exact8 plane survived
+7133.0,False,,,29,no valid outer-layer seed pairs
+7136.0,False,,,21,no valid outer-layer seed pairs
+7146.0,False,,,29,no valid outer-layer seed pairs
+7155.0,False,,,30,no valid outer-layer seed pairs
+7172.0,False,,,24,no valid outer-layer seed pairs
+7179.0,False,,,21,no valid outer-layer seed pairs
+7188.0,True,0.002456263944786485,3.8736008203115198,24,
+7192.0,False,,,18,no valid outer-layer seed pairs
+7206.0,False,,,23,no exact8 plane survived
+7211.0,False,,,28,no valid outer-layer seed pairs
+7252.0,False,,,19,no valid outer-layer seed pairs
+7281.0,False,,,23,no valid outer-layer seed pairs
+7294.0,False,,,25,no valid outer-layer seed pairs
+7306.0,False,,,23,no valid outer-layer seed pairs
+7307.0,False,,,27,no valid outer-layer seed pairs
+7308.0,False,,,25,no valid outer-layer seed pairs
+7326.0,False,,,26,no exact8 plane survived
+7327.0,False,,,25,no exact8 plane survived
+7329.0,False,,,26,no valid outer-layer seed pairs
+7331.0,True,0.0004985215225133939,1.0884362529471507,25,
+7336.0,False,,,28,no valid outer-layer seed pairs
+7337.0,False,,,21,no valid outer-layer seed pairs
+7351.0,False,,,22,no valid outer-layer seed pairs
+7364.0,False,,,24,no exact8 plane survived
+7385.0,False,,,26,no valid outer-layer seed pairs
+7387.0,False,,,25,no valid outer-layer seed pairs
+7424.0,False,,,20,no exact8 plane survived
+7428.0,False,,,28,no exact8 plane survived
+7430.0,False,,,24,no exact8 plane survived
+7446.0,False,,,29,no exact8 plane survived
+7468.0,False,,,24,no valid outer-layer seed pairs
+7494.0,False,,,29,no valid outer-layer seed pairs
+7500.0,False,,,24,no valid outer-layer seed pairs
+7509.0,False,,,25,no valid outer-layer seed pairs
+7528.0,False,,,22,no valid outer-layer seed pairs
+7533.0,False,,,23,no valid outer-layer seed pairs
+7541.0,False,,,22,no exact8 plane survived
+7553.0,False,,,24,no valid outer-layer seed pairs
+7582.0,False,,,34,no valid outer-layer seed pairs
+7586.0,False,,,22,no exact8 plane survived
+7590.0,False,,,22,no exact8 plane survived
+7592.0,False,,,24,no valid outer-layer seed pairs
+7599.0,False,,,24,no exact8 plane survived
+7608.0,True,0.005841769326454061,2.531864737292562,26,
+7626.0,False,,,25,no valid outer-layer seed pairs
+7635.0,False,,,23,no valid outer-layer seed pairs
+7650.0,False,,,21,no valid outer-layer seed pairs
+7651.0,False,,,31,no valid outer-layer seed pairs
+7675.0,False,,,23,no valid outer-layer seed pairs
+7682.0,False,,,22,no valid outer-layer seed pairs
+7697.0,False,,,26,no exact8 plane survived
+7708.0,False,,,26,no valid outer-layer seed pairs
+7716.0,False,,,28,no valid outer-layer seed pairs
+7721.0,False,,,24,no valid outer-layer seed pairs
+7724.0,False,,,26,no valid outer-layer seed pairs
+7739.0,False,,,24,no valid outer-layer seed pairs
+7746.0,True,0.011921341207807933,3.5909927856373764,26,
+7753.0,False,,,22,no valid outer-layer seed pairs
+7768.0,False,,,22,no valid outer-layer seed pairs
+7770.0,False,,,24,no valid outer-layer seed pairs
+7779.0,False,,,27,no valid outer-layer seed pairs
+7797.0,False,,,22,no valid outer-layer seed pairs
+7800.0,True,0.0014518178585382056,1.7453079734441144,22,
+7825.0,False,,,24,no exact8 plane survived
+7827.0,False,,,27,no valid outer-layer seed pairs
+7838.0,False,,,21,no valid outer-layer seed pairs
+7853.0,False,,,30,no valid outer-layer seed pairs
+7860.0,False,,,29,no valid outer-layer seed pairs
+7861.0,False,,,21,no valid outer-layer seed pairs
+7872.0,False,,,25,no valid outer-layer seed pairs
+7874.0,False,,,24,no exact8 plane survived
+7890.0,False,,,27,no valid outer-layer seed pairs
+7892.0,False,,,26,no valid outer-layer seed pairs
+7910.0,False,,,27,no valid outer-layer seed pairs
+7916.0,False,,,26,no valid outer-layer seed pairs
+7918.0,False,,,22,no valid outer-layer seed pairs
+7922.0,False,,,24,no valid outer-layer seed pairs
+7923.0,True,0.013396228726914964,4.524474643475729,28,
+7953.0,False,,,24,no valid outer-layer seed pairs
+7972.0,False,,,25,no valid outer-layer seed pairs
+7975.0,False,,,21,no valid outer-layer seed pairs
+7982.0,False,,,25,no exact8 plane survived
+7987.0,False,,,26,no valid outer-layer seed pairs
+7993.0,False,,,27,no exact8 plane survived
+8000.0,False,,,26,no valid outer-layer seed pairs
+8031.0,False,,,22,no exact8 plane survived
+8038.0,False,,,21,no valid outer-layer seed pairs
+8066.0,False,,,26,no valid outer-layer seed pairs
+8073.0,False,,,22,no valid outer-layer seed pairs
+8092.0,True,0.0005629468046669294,0.7878517234757121,21,
+8111.0,False,,,28,no valid outer-layer seed pairs
+8119.0,False,,,21,no valid outer-layer seed pairs
+8124.0,False,,,28,no valid outer-layer seed pairs
+8125.0,True,0.008729689388895566,3.8518285773370615,24,
+8126.0,False,,,22,no exact8 plane survived
+8166.0,False,,,25,no exact8 plane survived
+8190.0,True,0.025993321195706957,5.033482490162525,23,
+8200.0,True,0.0011027876059512224,2.104996609828094,24,
+8219.0,False,,,24,no valid outer-layer seed pairs
+8224.0,False,,,21,no valid outer-layer seed pairs
+8228.0,False,,,27,no valid outer-layer seed pairs
+8229.0,False,,,22,no exact8 plane survived
+8231.0,False,,,22,no valid outer-layer seed pairs
+8239.0,False,,,30,no exact8 plane survived
+8242.0,False,,,23,no valid outer-layer seed pairs
+8255.0,False,,,30,no valid outer-layer seed pairs
+8276.0,False,,,29,no valid outer-layer seed pairs
+8289.0,False,,,21,no valid outer-layer seed pairs
+8293.0,False,,,25,no exact8 plane survived
+8314.0,False,,,28,no valid outer-layer seed pairs
+8329.0,False,,,29,no valid outer-layer seed pairs
+8330.0,False,,,26,no exact8 plane survived
+8334.0,False,,,29,no valid outer-layer seed pairs
+8354.0,False,,,26,no valid outer-layer seed pairs
+8356.0,False,,,25,no valid outer-layer seed pairs
+8365.0,False,,,25,no valid outer-layer seed pairs
+8378.0,False,,,24,no valid outer-layer seed pairs
+8401.0,False,,,23,no exact8 plane survived
+8405.0,False,,,22,no valid outer-layer seed pairs
+8443.0,False,,,23,no valid outer-layer seed pairs
+8449.0,False,,,19,no valid outer-layer seed pairs
+8458.0,False,,,29,no valid outer-layer seed pairs
+8461.0,False,,,24,no valid outer-layer seed pairs
+8463.0,False,,,31,no valid outer-layer seed pairs
+8472.0,False,,,23,no valid outer-layer seed pairs
+8505.0,False,,,24,no valid outer-layer seed pairs
+8518.0,False,,,25,no valid outer-layer seed pairs
+8545.0,False,,,22,no exact8 plane survived
+8554.0,False,,,20,no valid outer-layer seed pairs
+8572.0,False,,,21,no valid outer-layer seed pairs
+8587.0,False,,,23,no valid outer-layer seed pairs
+8612.0,False,,,26,no valid outer-layer seed pairs
+8620.0,False,,,25,no valid outer-layer seed pairs
+8622.0,False,,,26,no valid outer-layer seed pairs
+8634.0,False,,,28,no valid outer-layer seed pairs
+8666.0,False,,,27,no valid outer-layer seed pairs
+8671.0,True,0.00868316306194483,3.180708593094196,27,
+8685.0,False,,,25,no valid outer-layer seed pairs
+8693.0,False,,,34,no valid outer-layer seed pairs
+8695.0,False,,,30,no valid outer-layer seed pairs
+8705.0,False,,,23,no valid outer-layer seed pairs
+8721.0,False,,,19,no valid outer-layer seed pairs
+8722.0,False,,,21,no valid outer-layer seed pairs
+8772.0,False,,,21,no valid outer-layer seed pairs
+8794.0,False,,,25,no valid outer-layer seed pairs
+8799.0,False,,,32,no exact8 plane survived
+8810.0,False,,,22,no valid outer-layer seed pairs
+8811.0,False,,,27,no valid outer-layer seed pairs
+8825.0,False,,,34,no valid outer-layer seed pairs
+8833.0,False,,,24,no valid outer-layer seed pairs
+8837.0,False,,,27,no exact8 plane survived
+8855.0,False,,,22,no valid outer-layer seed pairs
+8863.0,False,,,25,no valid outer-layer seed pairs
+8870.0,False,,,19,no valid outer-layer seed pairs
+8882.0,False,,,22,no valid outer-layer seed pairs
+8883.0,False,,,25,no valid outer-layer seed pairs
+8916.0,False,,,26,no valid outer-layer seed pairs
+8926.0,False,,,22,no valid outer-layer seed pairs
+8965.0,False,,,27,no exact8 plane survived
+8973.0,False,,,22,no valid outer-layer seed pairs
+8981.0,False,,,20,no valid outer-layer seed pairs
+8984.0,False,,,24,no valid outer-layer seed pairs
+8991.0,False,,,33,no valid outer-layer seed pairs
+9005.0,False,,,23,no valid outer-layer seed pairs
+9019.0,False,,,22,no valid outer-layer seed pairs
+9026.0,False,,,29,no valid outer-layer seed pairs
+9033.0,False,,,24,no exact8 plane survived
+9036.0,False,,,31,no valid outer-layer seed pairs
+9059.0,False,,,25,no valid outer-layer seed pairs
+9065.0,False,,,26,no valid outer-layer seed pairs
+9085.0,False,,,27,no exact8 plane survived
+9090.0,False,,,28,no exact8 plane survived
+9091.0,True,0.006689527955868136,4.386320863141905,25,
+9105.0,False,,,25,no valid outer-layer seed pairs
+9106.0,False,,,25,no valid outer-layer seed pairs
+9113.0,False,,,23,no valid outer-layer seed pairs
+9114.0,False,,,27,no valid outer-layer seed pairs
+9116.0,False,,,23,no exact8 plane survived
+9118.0,False,,,23,no exact8 plane survived
+9140.0,False,,,22,no valid outer-layer seed pairs
+9171.0,False,,,23,no valid outer-layer seed pairs
+9209.0,True,0.005709171315354883,3.2436652130927226,21,
+9234.0,False,,,22,no exact8 plane survived
+9236.0,False,,,24,no exact8 plane survived
+9239.0,False,,,28,no valid outer-layer seed pairs
+9270.0,False,,,22,no valid outer-layer seed pairs
+9272.0,False,,,27,no exact8 plane survived
+9278.0,False,,,30,no exact8 plane survived
+9280.0,False,,,21,no valid outer-layer seed pairs
+9290.0,False,,,30,no valid outer-layer seed pairs
+9293.0,False,,,24,no valid outer-layer seed pairs
+9296.0,False,,,21,no valid outer-layer seed pairs
+9329.0,False,,,28,no valid outer-layer seed pairs
+9346.0,False,,,28,no valid outer-layer seed pairs
+9351.0,True,0.01495037344821815,3.9696569878354584,27,
+9355.0,False,,,22,no valid outer-layer seed pairs
+9367.0,False,,,24,no valid outer-layer seed pairs
+9383.0,False,,,31,no valid outer-layer seed pairs
+9385.0,False,,,29,no valid outer-layer seed pairs
+9386.0,False,,,30,no valid outer-layer seed pairs
+9398.0,False,,,28,no valid outer-layer seed pairs
+9414.0,False,,,25,no exact8 plane survived
+9415.0,False,,,26,no valid outer-layer seed pairs
+9420.0,False,,,25,no valid outer-layer seed pairs
+9439.0,False,,,26,no exact8 plane survived
+9441.0,False,,,24,no valid outer-layer seed pairs
+9452.0,False,,,26,no valid outer-layer seed pairs
+9458.0,False,,,22,no valid outer-layer seed pairs
+9463.0,False,,,24,no exact8 plane survived
+9472.0,False,,,20,no valid outer-layer seed pairs
+9495.0,False,,,26,no valid outer-layer seed pairs
+9501.0,True,0.0076108470383181945,2.762809052683808,29,
+9502.0,False,,,22,no exact8 plane survived
+9550.0,False,,,41,no exact8 plane survived
+9554.0,False,,,34,no valid outer-layer seed pairs
+9565.0,False,,,22,no valid outer-layer seed pairs
+9594.0,False,,,27,no valid outer-layer seed pairs
+9601.0,False,,,31,no valid outer-layer seed pairs
+9603.0,False,,,23,no valid outer-layer seed pairs
+9629.0,False,,,23,no valid outer-layer seed pairs
+9640.0,False,,,26,no valid outer-layer seed pairs
+9651.0,False,,,26,no exact8 plane survived
+9657.0,False,,,24,no exact8 plane survived
+9669.0,False,,,25,no exact8 plane survived
+9698.0,False,,,25,no valid outer-layer seed pairs
+9703.0,False,,,25,no valid outer-layer seed pairs
+9705.0,False,,,22,no valid outer-layer seed pairs
+9718.0,False,,,32,no exact8 plane survived
+9722.0,False,,,24,no exact8 plane survived
+9728.0,False,,,27,no exact8 plane survived
+9733.0,False,,,30,no valid outer-layer seed pairs
+9748.0,False,,,29,no valid outer-layer seed pairs
+9756.0,False,,,25,no valid outer-layer seed pairs
+9757.0,False,,,28,no valid outer-layer seed pairs
+9760.0,False,,,23,no exact8 plane survived
+9769.0,False,,,26,no valid outer-layer seed pairs
+9771.0,False,,,27,no exact8 plane survived
+9779.0,False,,,28,no valid outer-layer seed pairs
+9789.0,False,,,22,no exact8 plane survived
+9802.0,False,,,23,no exact8 plane survived
+9821.0,False,,,28,no exact8 plane survived
+9855.0,False,,,29,no exact8 plane survived
+9856.0,False,,,25,no valid outer-layer seed pairs
+9896.0,False,,,29,no valid outer-layer seed pairs
+9907.0,False,,,29,no valid outer-layer seed pairs
+9908.0,False,,,22,no valid outer-layer seed pairs
+9909.0,False,,,20,no valid outer-layer seed pairs
+9933.0,False,,,24,no valid outer-layer seed pairs
+9935.0,False,,,25,no exact8 plane survived
+9949.0,True,0.011642688706211855,3.4980914999623036,26,
+9962.0,False,,,23,no valid outer-layer seed pairs
+9964.0,False,,,27,no valid outer-layer seed pairs
+9967.0,False,,,22,no valid outer-layer seed pairs
+9979.0,False,,,26,no valid outer-layer seed pairs
+9996.0,False,,,26,no exact8 plane survived
